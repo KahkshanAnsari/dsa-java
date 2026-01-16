@@ -44,7 +44,4 @@ public class SecondLargestNumber {
 
         sc.close();
     }
-
-
-    
 }
