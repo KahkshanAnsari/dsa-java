@@ -1,19 +1,37 @@
 import java.util.Scanner;
 
 public class RemoveDuplicates {
-    ublic static void main(String[] args) {
-        
+    public static void main(String[] args) {
+
         Scanner sc = new Scanner(System.in);
 
-        System.out.print("Enter the number of elements: ");
+        System.out.print("Enter number of elements: ");
         int n = sc.nextInt();
 
-        int arr[] = new int[n];
+        int[] arr = new int[n];
 
-        System.out.print("Enter " +n+ " elements: ");
-        for (int i = 0; i<arr.length; i++) {
+        System.out.print("Enter elements: ");
+        for (int i = 0; i < n; i++) {
             arr[i] = sc.nextInt();
         }
 
-    
+        System.out.print("Array after removing duplicates: ");
+
+        for (int i = 0; i < n; i++) {
+            boolean isDuplicate = false;
+
+            for (int j = 0; j < i; j++) {
+                if (arr[i] == arr[j]) {
+                    isDuplicate = true;
+                    break;
+                }
+            }
+
+            if (!isDuplicate) {
+                System.out.print(arr[i] + " ");
+            }
+        }
+
+        sc.close();
+    }
 }
